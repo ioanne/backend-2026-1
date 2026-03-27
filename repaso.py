@@ -18,8 +18,11 @@ conjunto = {1, 2, 3, 4, 5, "hola", True, None}
 diccionario = {
     "clave1": [1, 2, 3, 4, 5, "hola", True, None, [6, 7, 8, [[[]]]]],
     "clave2": "valor2",
-    "clave3": "valor3"
+    "clave3": "valor3",
+    "print": print,
+    "suma": sum
 }
+diccionario["print"]("Hola")
 diccionario["clave1"]
 diccionario["clave2"]
 diccionario["clave3"]
@@ -119,6 +122,17 @@ lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 for elemento in lista:
     print(elemento)
 
+
+"""
+    Sintaxis del for en java
+    for (i=0, i >= 10, i++) {
+        ...
+        ...
+        ...
+    }
+
+"""
+
 palabra = "Acá vamos a tener una palabra messi oculta"
 
 palabras = palabra.split(' ')
@@ -130,6 +144,27 @@ while contador != len(palabras): # while infinito
         break # nos sirve para romper el while
     # En los while podemos usar continue (saltea la ejecución)
     contador += 1
+
+
+numeros = [1,2,3,4,5,6,7,8,9,10]
+contador = -1
+while contador <= 9:
+    contador+=1
+    if numeros[contador] % 2 == 0:
+        continue # No voy a continuar, dame el próximo
+    
+    print("Ejecución de otro código")
+
+for i in range(1, 11):
+    if i % 2 == 0:
+        continue
+    print("Ejecucion de codigo")
+
+for i in range(0, 11, 2):
+    print("Ejecucion de codigo")
+
+
+# range es una "función" me devuelve numeros desde 1 inclusive hasta no llegar a 11.
 
 # En python todo es un objeto
 print # me muestra algo en consola
@@ -218,3 +253,15 @@ def get_user(*args, **kwargs):
 #  ejecuta algo acá (identificar de donde viene el request y hacia donde va)
 get_user("algo")
 # ejecuta algo acá (formatear la salida, es decir la respuesta.)
+
+
+def mi_decorador(func):
+    def envolver():
+        print("Hacemos algo antes de mi funcion")
+        func()
+        print("Hacemos algo despues de mi funcion")
+    return envolver
+
+@mi_decorador
+def foo():
+    print("Esta es mi funcion")
