@@ -1,0 +1,17 @@
+mensaje: "Hola mundo"
+otra: 1233
+bool: true
+bool2: false
+
+compras:
+  - "leche"
+  - "huevos"
+  - "pan"
+
+actividades:
+  recreativas:
+    - "Mirar la tele"
+    - "jugar"
+  deportivas:
+    - "correr"
+    - "caminar"
